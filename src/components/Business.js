@@ -1,25 +1,42 @@
+import { buildQueries } from '@testing-library/react';
 import React from 'react';
+import { Flex, Img, Box, Heading } from '@chakra-ui/react';
 
 function Business(){
-    (
-        <div className='business'>
-            <div className='image-container'>
-                <img className='image'/>
-            </div>
-            <h1 id='businessName'></h1>
-            <div className='address-container'>
-                <p id='address'></p>
-                <p id='city'></p>
-                <p id='state'></p>
-                <p id='zipcode'></p>
-            </div>
-            <div className='review-container'>
-                <h3 id='category'></h3>
-                <p id='rating'></p>
-                <p id='reviewCount'></p>
-            </div>
-        </div>
-    )
+    const business = {
+        imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
+        name: 'MarginOtto Pizzeria',
+        address: '1010 Paddington Way',
+        city: 'Flavortown',
+        state: 'NY',
+        zipCode: '10101',
+        category: 'ITALIAN',
+        rating: 4.5,
+        reviewCount: 90
+    };
+
+    return(
+        <Box className='business'>
+            <Flex className='image-container' justifyContent='center'>
+                <Img src={business.imageSrc} alt='Delicious food' boxSize='300px'/>
+            </Flex>
+            <Heading as='h1' id='businessName' size='lg' mt={4} mb={2}>
+                {business.name}
+            </Heading>
+            <Flex className='info-container' justifyContent='space-between'>
+                <Flex className='address-container' flexDirection='column' alignItems='flex-start'>
+                    <p id='address'>{business.address}</p>
+                    <p id='city'>{business.city}</p>
+                    <p id='state'>{business.state} {business.zipCode}</p>
+                </Flex>
+                <Flex className='review-container' flexDirection='column' alignItems='flex-end'> 
+                        <Heading as='h2' id='category' size='md' color='gold'>{business.category}</Heading>
+                        <Heading as='h3' id='rating' size='sm' color='gold'>{business.rating} STARS</Heading>
+                        <p id='reviewCount'>{business.reviewCount} reviews</p>
+                </Flex>
+            </Flex>
+        </Box>
+    );
 };
 
 export default Business;
