@@ -26,7 +26,7 @@ function SearchBar(){
           <Input type='text' placeholder='Where?' id='search-where' variant='filled' _focus={{ bg: 'yellow.100', borderColor: 'yellow.500' }} me={5}></Input>
         </Flex>
         <Flex className='search-button' alignItems="center" justifyContent="center" mb={4}>
-          <Button id='search-button' colorScheme='yellow' size='lg'>Let's Go</Button>
+          <Button id='search-button' bgColor='goldenrod' _hover={{ bgColor: 'darkgoldenrod' }} size='lg'>Let's Go</Button>
         </Flex>
       </Box>
     );

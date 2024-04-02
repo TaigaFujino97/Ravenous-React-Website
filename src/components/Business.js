@@ -1,6 +1,5 @@
-import { buildQueries } from '@testing-library/react';
 import React from 'react';
-import { Flex, Img, Box, Heading } from '@chakra-ui/react';
+import { Box, Flex, Heading, Img } from '@chakra-ui/react';
 
 function Business(){
     const business = {
@@ -37,6 +36,6 @@ function Business(){
             </Flex>
         </Box>
     );
-};
+  };
 
-export default Business;
+  export default Business;
